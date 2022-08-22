@@ -6,6 +6,9 @@ const div = document.createElement('div')
 div.style.backgroundColor = 'red'
 
 input.addEventListener('input', () => {
+    container.style.gridTemplateColumns =  `repeat(16, 1fr)`
+    container.style.gridTemplateRows =  `repeat(16, 1fr)`
+    container.innerHTML = ''
     paragraph.innerText = input.value
     for (let i = 0; i < input.value; i++) {
         arr.push('<div></div>')  
@@ -17,3 +20,6 @@ input.addEventListener('input', () => {
 
 
 console.log(arr)
+
+
+// style.setProperty('grid-template-columns', 'repeat(' + variable + ', 1fr)');
