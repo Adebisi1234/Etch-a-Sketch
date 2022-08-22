@@ -14,4 +14,6 @@ input.addEventListener('input', () => {
 })
 
 
+
+
 console.log(arr)
