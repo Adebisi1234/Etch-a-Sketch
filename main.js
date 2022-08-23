@@ -4,15 +4,11 @@ const container = document.querySelector('.container')
 const arr = []
 const div = document.createElement('div')
 
-input.addEventListener('input', changeSize)
+// Default paragraph content
+paragraph.innerText = input.value
 
-function changeSize() {
-    paragraph.innerText = input.valueAsNumber
-    container.style.gridTemplateColumns =  `repeat(${input.value}, 1fr)`
-    container.style.gridTemplateRows =  `repeat(${input.value}, 1fr)`
-    divContainer.forEach((divs) => divs.style.backgroundColor = 'white')
-}
 
+// Default grid row/column size
 container.style.gridTemplateColumns =  `repeat(${input.value}, 1fr)`
 container.style.gridTemplateRows =  `repeat(${input.value}, 1fr)`
 
@@ -31,60 +27,14 @@ function changeBackgroundColor() {
     this.style.backgroundColor = 'black'
 }
 
-paragraph.innerText = input.value
 
-input.addEventListener('input', main)
+// Changing the grid row/column size
+input.addEventListener('input', changeSize)
 
+function changeSize() {
+    paragraph.innerText = input.valueAsNumber
+    container.style.gridTemplateColumns =  `repeat(${input.value}, 1fr)`
+    container.style.gridTemplateRows =  `repeat(${input.value}, 1fr)`
+    divContainer.forEach((divs) => divs.style.backgroundColor = 'white')
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// div.style.backgroundColor = 'red'
-
-// input.addEventListener('input', () => {
-//     container.style.gridTemplateColumns =  `repeat(${input.value}, 1fr)`
-//     container.style.gridTemplateRows =  `repeat(${input.value}, 1fr)`
-//     container.innerHTML = ''
-//     paragraph.innerText = input.value
-//     for (let i = 0; i < Math.pow(input.value, 2); i++) {
-//         arr.push('<div></div>')  
-//         container.innerHTML += arr[i]
-//     }
-// })
-
-
-
-
-// console.log(arr)
-
-
-// style.setProperty('grid-template-columns', 'repeat(' + variable + ', 1fr)');
