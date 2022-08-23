@@ -6,10 +6,18 @@ const div = document.createElement('div')
 
 container.style.gridTemplateColumns =  `repeat(${input.value}, 1fr)`
 container.style.gridTemplateRows =  `repeat(${input.value}, 1fr)`
+
+const divContainer = []
 for(let i =0; i < Math.pow(input.value, 2); i++){
     const div = document.createElement('div')
-    div.style.backgroundColor = 'blue'
+    divContainer.push(div)
     container.append(div)
+}
+
+divContainer.forEach((divs) => divs.addEventListener('mouseover', changeBackgroundColor))
+
+function changeBackgroundColor() {
+    this.style.backgroundColor = 'black'
 }
 
 paragraph.innerText = input.value
