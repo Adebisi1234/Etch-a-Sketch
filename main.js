@@ -21,11 +21,11 @@ for(let i =0; i < Math.pow(input.value, 2); i++){
 }
 
 // added eventlistener to divs and change backgroundColor on mouseover
-divContainer.forEach((divs) => divs.addEventListener('mouseover', changeBackgroundColor))
+// divContainer.forEach((divs) => divs.addEventListener('mouseover', changeBackgroundColor))
 
-function changeBackgroundColor() {
-    this.style.backgroundColor = 'black'
-}
+// function changeBackgroundColor() {
+//     this.style.backgroundColor = 'black'
+// }
 
 
 // Changing the grid row/column size
@@ -37,4 +37,18 @@ function changeSize() {
     container.style.gridTemplateRows =  `repeat(${input.value}, 1fr)`
     divContainer.forEach((divs) => divs.style.backgroundColor = 'white')
 }
+
+
+// Rainbow color
+divContainer.forEach((divs) => {
+    let red = Math.round((Math.random()*255))
+    let blue = Math.round((Math.random()*255))
+    let green = Math.round((Math.random()*255))
+    divs.addEventListener('mouseover', changeBackgroundColor)
+
+    function changeBackgroundColor() {
+        this.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`
+    }
+
+})
 
