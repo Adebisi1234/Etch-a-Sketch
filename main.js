@@ -3,6 +3,11 @@ const paragraph = document.querySelector('p')
 const container = document.querySelector('.container')
 const arr = []
 const div = document.createElement('div')
+const rainbowColorSelector = document.querySelector('#rainbow')
+
+rainbowColorSelector.addEventListener('click', rainbow)
+
+
 
 // Default paragraph content
 paragraph.innerText = `${input.value}X${input.value}`
@@ -21,11 +26,11 @@ for(let i =0; i < Math.pow(input.value, 2); i++){
 }
 
 // added eventlistener to divs and change backgroundColor on mouseover
-// divContainer.forEach((divs) => divs.addEventListener('mouseover', changeBackgroundColor))
+divContainer.forEach((divs) => divs.addEventListener('mouseover', changeBackgroundColor))
 
-// function changeBackgroundColor() {
-//     this.style.backgroundColor = 'black'
-// }
+function changeBackgroundColor() {
+    this.style.backgroundColor = 'black'
+}
 
 
 // Changing the grid row/column size
@@ -40,15 +45,17 @@ function changeSize() {
 
 
 // Rainbow color
-divContainer.forEach((divs) => {
-    let red = Math.round((Math.random()*255))
-    let blue = Math.round((Math.random()*255))
-    let green = Math.round((Math.random()*255))
-    divs.addEventListener('mouseover', changeBackgroundColor)
-
-    function changeBackgroundColor() {
-        this.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`
-    }
-
-})
-
+function rainbow() {
+    divContainer.forEach((divs) => {
+        let red = Math.round((Math.random()*255))
+        let blue = Math.round((Math.random()*255))
+        let green = Math.round((Math.random()*255))
+        divs.addEventListener('mouseover', changeBackgroundColor)
+    
+        function changeBackgroundColor() {
+            this.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`
+        }
+    
+    })
+    
+}
