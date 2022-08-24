@@ -2,7 +2,6 @@ const input = document.querySelector('input')
 const paragraph = document.querySelector('p')
 const container = document.querySelector('.container')
 const arr = []
-const div = document.createElement('div')
 const rainbowColorSelector = document.querySelector('#rainbow')
 
 rainbowColorSelector.addEventListener('click', rainbow)
@@ -19,18 +18,18 @@ container.style.gridTemplateRows =  `repeat(${input.value}, 1fr)`
 
 // create inner divs for container
 const divContainer = []
-for(let i =0; i < Math.pow(input.value, 2); i++){
+for(let i = 0; i < Math.pow(input.value, 2); i++){
     const div = document.createElement('div')
     divContainer.push(div)
     container.append(div)
 }
 
 // added eventlistener to divs and change backgroundColor on mouseover
-divContainer.forEach((divs) => divs.addEventListener('mouseover', changeBackgroundColor))
+// divContainer.forEach((divs) => divs.addEventListener('mouseover', changeBackgroundColor))
 
-function changeBackgroundColor() {
-    this.style.backgroundColor = 'black'
-}
+// function changeBackgroundColor() {
+//     this.style.backgroundColor = 'black'
+// }
 
 
 // Changing the grid row/column size
@@ -47,15 +46,40 @@ function changeSize() {
 // Rainbow color
 function rainbow() {
     divContainer.forEach((divs) => {
-        let red = Math.round((Math.random()*255))
-        let blue = Math.round((Math.random()*255))
-        let green = Math.round((Math.random()*255))
+        // let red = Math.round((Math.random()*255))
+        // let blue = Math.round((Math.random()*255))
+        // let green = Math.round((Math.random()*255))
         divs.addEventListener('mouseover', changeBackgroundColor)
     
         function changeBackgroundColor() {
+            let red = Math.round((Math.random()*255))
+            let blue = Math.round((Math.random()*255))
+            let green = Math.round((Math.random()*255))
             this.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`
+            this.addEventListener('mouseover', changeBackgroundColor)
         }
     
     })
     
 }
+
+
+// GreyScale
+
+divContainer.forEach((divs) => {
+    let grey = 0.10 
+    divs.addEventListener('mouseover', changeBackgroundColor)
+
+    function changeBackgroundColor() {
+        
+        if(divs.backgroundColor === `rgba(0, 0, 0, ${grey})`){
+            grey = 0.20
+            console.log(grey)
+        }else{
+            this.style.backgroundColor = `rgba(0, 0, 0, ${grey})`
+        }
+        // console.log(grey)
+        
+    }
+
+})
