@@ -49,7 +49,7 @@ function rainbow() {
         // let red = Math.round((Math.random()*255))
         // let blue = Math.round((Math.random()*255))
         // let green = Math.round((Math.random()*255))
-        divs.addEventListener('mouseover', changeBackgroundColor)
+        divs.addEventListener('mouseenter', changeBackgroundColor)
     
         function changeBackgroundColor() {
             let red = Math.round((Math.random()*255))
@@ -65,21 +65,84 @@ function rainbow() {
 
 
 // GreyScale
+// let grey = 0.10
+// let count = 0
+// divContainer.forEach((divs) => {
+    
+//     divs.addEventListener('mouseover', changeBackgroundColor)
 
-divContainer.forEach((divs) => {
-    let grey = 0.10 
-    divs.addEventListener('mouseover', changeBackgroundColor)
-
-    function changeBackgroundColor() {
+//     function changeBackgroundColor() {
+//         console.log(grey)
+//         // console.log(this.style.backgroundColor)
+//         if(this.style.backgroundColor === `rgba(0, 0, 0, 0)`){
+//             this.style.backgroundColor = `rgba(0, 0, 0, 0)` 
+//         }
+//         if(this.style.backgroundColor === `rgba(0, 0, 0, ${grey})`){
+//             count += 0.20
+//             console.log(`grey ${grey}`)
+//             this.style.backgroundColor = `rgba(0, 0, 0, ${count})`
+//             if(this.style.backgroundColor === `rgba(0, 0, 0, ${count})`){
+//                 count += 0.20
+//                 console.log(`grey ${grey}`)
+//                 this.style.backgroundColor = `rgba(0, 0, 0, ${count})`
+//             }
+//         }else{
+//             this.style.backgroundColor = `rgba(0, 0, 0, ${grey})`
+//         }
+//         // console.log(grey)
         
-        if(divs.backgroundColor === `rgba(0, 0, 0, ${grey})`){
-            grey = 0.20
-            console.log(grey)
-        }else{
-            this.style.backgroundColor = `rgba(0, 0, 0, ${grey})`
-        }
-        // console.log(grey)
-        
-    }
+//     }
 
+// })
+
+let grey = 0.1
+let change = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+divContainer.forEach(divs => {
+    // divs.style.backgroundColor = 'rgba(0, 0, 0, 0.1)'
+    divs.addEventListener('mouseenter', changeBackgroundColor)
 })
+
+// function changeBackgroundColor() {
+//     for (let i = 0; i < change.length; i++) {
+//         console.log(this.style.backgroundColor)
+//         console.log(change[i])
+//         this.style.backgroundColor = `rgba( 0, 0, 0, ${change[1]})`
+//         console.log(this.style.backgroundColor)
+//         console.log(change[i])
+//         if(this.style.backgroundColor === `rgba( 0, 0, 0, ${change[i]})`){
+//             this.style.backgroundColor = `rgba( 0, 0, 0, ${change[(9)]}})`
+//             console.log(this.style.backgroundColor)
+//             console.log(change[i])
+
+//         }//else{
+//         //    this.style.backgroundColor = `rgba( 0, 0, 0, ${change[1]})`
+//         //    console.log(change[i])
+//         // }
+//     }
+
+// }
+
+function changeBackgroundColor() {
+    if(this.style.backgroundColor === 'rgba(0, 0, 0, 0.1)'){
+        console.log('fuck')
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.2)'
+    }else if(this.style.backgroundColor === 'rgba(0, 0, 0, 0.2)'){
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.3)'
+    }else if(this.style.backgroundColor === 'rgba(0, 0, 0, 0.3)'){
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
+    }else if(this.style.backgroundColor === 'rgba(0, 0, 0, 0.4)'){
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+    }else if(this.style.backgroundColor === 'rgba(0, 0, 0, 0.5)'){
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
+    }else if(this.style.backgroundColor === 'rgba(0, 0, 0, 0.6)'){
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'
+    }else if(this.style.backgroundColor === 'rgba(0, 0, 0, 0.7)'){
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'
+    }else if(this.style.backgroundColor === 'rgba(0, 0, 0, 0.8)'){
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.9)'
+    }else if(this.style.backgroundColor === 'rgba(0, 0, 0, 0.9)'){
+        this.style.backgroundColor = 'rgba(0, 0, 0, 1)'
+    }else if(this.style.backgroundColor === ''){
+        this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)'
+    }
+}
