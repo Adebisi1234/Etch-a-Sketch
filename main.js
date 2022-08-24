@@ -33,9 +33,10 @@ function blackBackgroundColor() {
     divContainer.forEach((divs) => {
         
         divs.addEventListener('mouseenter', changeBackgroundColor)
-        function changeBackgroundColor() {
-        this.style.backgroundColor = 'black'
-    }   
+        function changeBackgroundColor(e) {
+            e.target.style.opacity = 1
+            this.style.backgroundColor = 'black'
+        }   
     })
 
      
@@ -56,10 +57,11 @@ function changeSize() {
 function random() {
     divContainer.forEach((divs) => {divs.addEventListener('mouseenter', randomBackgroundColor)
     
-        function randomBackgroundColor() {
+        function randomBackgroundColor(e) {
             let red = Math.round((Math.random()*255))
             let blue = Math.round((Math.random()*255))
             let green = Math.round((Math.random()*255))
+            e.target.style.opacity = 1
             this.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`
             // this.addEventListener('mouseover', changeBackgroundColor)
         }
@@ -74,18 +76,14 @@ function random() {
 function greyScale() {
     let change = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
     divContainer.forEach(divs => {
-        divs.style.backgroundColor = 'rgba(0, 0, 0, 0.1)'
+        let count = 0
         divs.addEventListener('mouseenter', greyBackgroundColor)
-    })
-
-    function greyBackgroundColor() {
-        for(let i = 0; i < change.length; i++){
-            if(this.style.backgroundColor === `rgba(0, 0, 0, ${change[i]})`){
-                this.style.backgroundColor = `rgba(0, 0, 0, ${change[i+1]})`
-                break
+        function greyBackgroundColor(e) {
+            count += 1
+            for(let i = 0; i < change.length; i++){
+                e.target.style.backgroundColor = 'black'
+               e.target.style.opacity = 0.2 * count
             }
         }
-    }
-
-    
+    })
 }
