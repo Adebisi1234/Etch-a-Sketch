@@ -23,6 +23,7 @@ h2{
     display: flex;
     /* justify-content: space-between; */
     align-content: center;
+    background-color: aqua;
 }
 
 .left-flex{
@@ -31,4 +32,12 @@ h2{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+footer, header {
+    display: flex;
+    background-color: rgba(75, 140, 39, 0.707);
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
 }
