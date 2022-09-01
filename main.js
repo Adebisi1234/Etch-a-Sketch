@@ -50,6 +50,7 @@ function changeSize() {
     container.style.gridTemplateColumns =  `repeat(${input.value}, 1fr)`
     container.style.gridTemplateRows =  `repeat(${input.value}, 1fr)`
     divContainer.forEach((divs) => divs.style.backgroundColor = 'white')
+    divContainer.forEach((divs) => divs.style.opacity = '1')
 }
 
 
