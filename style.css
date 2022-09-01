@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 .container {
-    width: 960px;
-    height: 960px;
+    width: 50vw;
+    height: 90vh;
     border: 1px solid black;
     display: grid;
     /* grid-template-columns: repeat(16, 1fr);
