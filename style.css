@@ -34,10 +34,36 @@ h2{
     justify-content: center;
 }
 
+.right-flex {
+    display: flex;
+    height: fit-content;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
 footer, header {
     display: flex;
     background-color: rgba(75, 140, 39, 0.707);
     justify-content: center;
     align-items: center;
     height: 8vh;
+}
+
+@media screen and (max-width:700px) {
+    .flex {
+        flex-direction: column;
+    }
+
+    .left-flex{
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        width: 70vw;
+    }
 }
