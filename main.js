@@ -1,6 +1,7 @@
 const input = document.querySelector('input')
 const paragraph = document.querySelector('p')
 const container = document.querySelector('.container')
+const clear = document.querySelector('#clear')
 const arr = []
 const rainbowColorSelector = document.querySelector('#rainbow')
 const greyScaleColorSelector = document.querySelector('#greyScale')
@@ -9,7 +10,14 @@ const blackColorSelector = document.querySelector('#black')
 rainbowColorSelector.addEventListener('click', random)
 greyScaleColorSelector.addEventListener('click', greyScale)
 blackColorSelector.addEventListener('click', blackBackgroundColor)
+clear.addEventListener('click', clearBackground)
 
+function clearBackground() {
+    divContainer.forEach((divs) => {
+        divs.style.backgroundColor = 'white'
+        divs.style.opacity = '1'
+    })
+}
 
 
 // Default paragraph content
