@@ -49,6 +49,12 @@ function changeSize() {
     paragraph.innerText = `${input.value}X${input.value}`
     container.style.gridTemplateColumns =  `repeat(${input.value}, 1fr)`
     container.style.gridTemplateRows =  `repeat(${input.value}, 1fr)`
+    container.innerHTML = ''
+    for(let i = 0; i < Math.pow(input.value, 2); i++){
+        const div = document.createElement('div')
+        divContainer.push(div)
+        container.append(div)
+    }
     divContainer.forEach((divs) => divs.style.backgroundColor = 'white')
     divContainer.forEach((divs) => divs.style.opacity = '1')
 }
